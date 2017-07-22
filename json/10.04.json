@@ -8,7 +8,6 @@
         "Make": "ford",
         "Model": "probe gt",
         "Number": 69,
-        "Position": 1,
         "Team Name": "BoomPowSurprise",
         "Year": 1994
     },
@@ -21,7 +20,6 @@
         "Make": "Ford",
         "Model": "Mustang",
         "Number": 13,
-        "Position": 10,
         "Team Name": "Grim Reaper Racing",
         "Year": 1994
     },
@@ -34,7 +32,6 @@
         "Make": "Eagle",
         "Model": "Talon TSi",
         "Number": 800,
-        "Position": 11,
         "Team Name": "Cyberdyne Systems Racing",
         "Year": 1990
     },
@@ -47,7 +44,6 @@
         "Make": "Porsche",
         "Model": "944",
         "Number": 59,
-        "Position": 12,
         "Team Name": "Floridiot Motorsports",
         "Year": 1985
     },
@@ -60,7 +56,6 @@
         "Make": "Mazda",
         "Model": "RX-7",
         "Number": 55,
-        "Position": 13,
         "Team Name": "PredaTurd Performance",
         "Year": 1987
     },
@@ -73,7 +68,6 @@
         "Make": "Ford",
         "Model": "Escort GT.R MK III",
         "Number": 45,
-        "Position": 14,
         "Team Name": "TAJ Escort Service",
         "Year": 1993
     },
@@ -86,7 +80,6 @@
         "Make": "Honda",
         "Model": "Civic",
         "Number": 61,
-        "Position": 15,
         "Team Name": "Clueless Racing",
         "Year": 1989
     },
@@ -99,7 +92,6 @@
         "Make": "BMW",
         "Model": "320i",
         "Number": 67,
-        "Position": 16,
         "Team Name": "Miami ViceGrips",
         "Year": 1980
     },
@@ -112,7 +104,6 @@
         "Make": "Mazda",
         "Model": "Miata",
         "Number": 74,
-        "Position": 17,
         "Team Name": "Chump Change",
         "Year": 1991
     },
@@ -125,7 +116,6 @@
         "Make": "VW if completed or BMW as fallback",
         "Model": "Bug- or e30",
         "Number": 30,
-        "Position": 18,
         "Team Name": "Yertle racing",
         "Year": 1969
     },
@@ -138,7 +128,6 @@
         "Make": "Acura",
         "Model": "Integra",
         "Number": 81,
-        "Position": 19,
         "Team Name": "Team Car Dorks 1 - FSM",
         "Year": 1995
     },
@@ -151,7 +140,6 @@
         "Make": "Mazda",
         "Model": "MX3",
         "Number": 38,
-        "Position": 2,
         "Team Name": "Hong Norr - LeMons Logik",
         "Year": 1994
     },
@@ -164,7 +152,6 @@
         "Make": "Ford",
         "Model": "Crown Vic Interceptor",
         "Number": 70,
-        "Position": 20,
         "Team Name": "To Punish and Enslave",
         "Year": 1994
     },
@@ -177,7 +164,6 @@
         "Make": "Cessna",
         "Model": "172",
         "Number": 172,
-        "Position": 21,
         "Team Name": "Our Lady of Perpetual Downforce",
         "Year": 1988
     },
@@ -190,7 +176,6 @@
         "Make": "Volvo",
         "Model": "244",
         "Number": 240,
-        "Position": 22,
         "Team Name": "Keystone Kops",
         "Year": 1984
     },
@@ -203,7 +188,6 @@
         "Make": "Volkswagen",
         "Model": "1973 Super Beetle",
         "Number": 43,
-        "Position": 23,
         "Team Name": "Afro Engineered Racing",
         "Year": 1973
     },
@@ -216,7 +200,6 @@
         "Make": "Mazda",
         "Model": "RX-7",
         "Number": 56,
-        "Position": 24,
         "Team Name": "PredaTurd Pro",
         "Year": 1990
     },
@@ -229,7 +212,6 @@
         "Make": "Honda",
         "Model": "Prelude",
         "Number": 4,
-        "Position": 25,
         "Team Name": "4 Paws Racing",
         "Year": 1998
     },
@@ -242,7 +224,6 @@
         "Make": "Volvo",
         "Model": "850 Wagon",
         "Number": 71,
-        "Position": 26,
         "Team Name": "ReVolvolution Racing",
         "Year": 1994
     },
@@ -255,7 +236,6 @@
         "Make": "Chev",
         "Model": "Caprice",
         "Number": 78,
-        "Position": 27,
         "Team Name": "Rubber Biscuit Racing",
         "Year": 1994
     },
@@ -268,7 +248,6 @@
         "Make": "Toyota",
         "Model": "Mr2",
         "Number": 73,
-        "Position": 28,
         "Team Name": "Mod Squad Racing",
         "Year": 1991
     },
@@ -281,7 +260,6 @@
         "Make": "Honda",
         "Model": "Prelude",
         "Number": 50,
-        "Position": 29,
         "Team Name": "Team Coconut",
         "Year": 1992
     },
@@ -294,7 +272,6 @@
         "Make": "Mazda",
         "Model": "Miata",
         "Number": 111,
-        "Position": 3,
         "Team Name": "Eyesore Racing",
         "Year": 1994
     },
@@ -307,7 +284,6 @@
         "Make": "BMW",
         "Model": "540I",
         "Number": 666,
-        "Position": 30,
         "Team Name": "Yakuza Gorilla Racing",
         "Year": 1995
     },
@@ -320,7 +296,6 @@
         "Make": "Honda",
         "Model": "Civic Wagovan",
         "Number": 44,
-        "Position": 31,
         "Team Name": "Nutjob Racing",
         "Year": 1991
     },
@@ -333,7 +308,6 @@
         "Make": "Honda",
         "Model": "Prelude Si",
         "Number": 8,
-        "Position": 32,
         "Team Name": "Magnum PU",
         "Year": 1989
     },
@@ -346,7 +320,6 @@
         "Make": "Saabstory",
         "Model": "9hundredth",
         "Number": 142,
-        "Position": 33,
         "Team Name": "AdoptedByJets",
         "Year": 1991
     },
@@ -359,7 +332,6 @@
         "Make": "Ford",
         "Model": "Crown Vic",
         "Number": 220,
-        "Position": 34,
         "Team Name": "Swamp Pig",
         "Year": 2002
     },
@@ -372,7 +344,6 @@
         "Make": "BMW",
         "Model": "E30",
         "Number": 113,
-        "Position": 35,
         "Team Name": "Team Car Dorks 2 - IPU",
         "Year": 1987
     },
@@ -385,7 +356,6 @@
         "Make": "bmw",
         "Model": "318is",
         "Number": 7,
-        "Position": 36,
         "Team Name": "Preppies in a Crappy Beemer",
         "Year": 1993
     },
@@ -398,7 +368,6 @@
         "Make": "Lincoln",
         "Model": "Towncar",
         "Number": 304,
-        "Position": 37,
         "Team Name": "M.A.S.H. (More Alcohol Should Help)",
         "Year": 1993
     },
@@ -411,7 +380,6 @@
         "Make": "Oldsmobile",
         "Model": "Achieva",
         "Number": 371,
-        "Position": 38,
         "Team Name": "El No Che",
         "Year": 1993
     },
@@ -424,7 +392,6 @@
         "Make": "VW",
         "Model": "JETTaaaahhhhhhhhhhh!",
         "Number": 305,
-        "Position": 39,
         "Team Name": "The Miami Overheat",
         "Year": 1987
     },
@@ -437,7 +404,6 @@
         "Make": "Toyota",
         "Model": "Paseo",
         "Number": 998,
-        "Position": 4,
         "Team Name": "Sick Sideways",
         "Year": 1992
     },
@@ -450,7 +416,6 @@
         "Make": "Saab",
         "Model": "96 sedan 2 stroke",
         "Number": 34,
-        "Position": 40,
         "Team Name": "adopted by jets 2",
         "Year": 1971
     },
@@ -463,7 +428,6 @@
         "Make": "BMW",
         "Model": "325i",
         "Number": 5,
-        "Position": 41,
         "Team Name": "Leapin' Langosta Racing",
         "Year": 1989
     },
@@ -476,7 +440,6 @@
         "Make": "SAAB",
         "Model": "900T",
         "Number": 91,
-        "Position": 42,
         "Team Name": "rbankracing.com (Svenska I)",
         "Year": 1985
     },
@@ -489,7 +452,6 @@
         "Make": "Mazda",
         "Model": "RX7",
         "Number": 2,
-        "Position": 43,
         "Team Name": "Flyin' Deuce",
         "Year": 1983
     },
@@ -502,7 +464,6 @@
         "Make": "BMW",
         "Model": "325 IS",
         "Number": 93,
-        "Position": 44,
         "Team Name": "Race Hard Race Ugly",
         "Year": 1988
     },
@@ -515,7 +476,6 @@
         "Make": "BMW",
         "Model": "318ti",
         "Number": 57,
-        "Position": 45,
         "Team Name": "Walk of Shame Racing",
         "Year": 1993
     },
@@ -528,7 +488,6 @@
         "Make": "Saturn",
         "Model": "SC DOS",
         "Number": 20,
-        "Position": 46,
         "Team Name": "SATURN FIVE",
         "Year": 1997
     },
@@ -541,7 +500,6 @@
         "Make": "Nissan",
         "Model": "300zx",
         "Number": 31,
-        "Position": 47,
         "Team Name": "Black Sheep Racing",
         "Year": 1987
     },
@@ -554,7 +512,6 @@
         "Make": "subaru",
         "Model": "impreza",
         "Number": 41,
-        "Position": 48,
         "Team Name": "TEAM PAISLEY",
         "Year": 1997
     },
@@ -567,7 +524,6 @@
         "Make": "Lincoln",
         "Model": "Mark VII",
         "Number": 14,
-        "Position": 49,
         "Team Name": "GRM",
         "Year": 1986
     },
@@ -580,7 +536,6 @@
         "Make": "Toyota",
         "Model": "Paseo",
         "Number": 999,
-        "Position": 5,
         "Team Name": "Sick Sideways 2",
         "Year": 1992
     },
@@ -593,7 +548,6 @@
         "Make": "Nissan",
         "Model": "300ZX",
         "Number": 23,
-        "Position": 50,
         "Team Name": "Kamikaze Racing",
         "Year": 1990
     },
@@ -606,7 +560,6 @@
         "Make": "plymouth",
         "Model": "neon",
         "Number": 47,
-        "Position": 51,
         "Team Name": "Lemons Vuitton",
         "Year": 1995
     },
@@ -619,7 +572,6 @@
         "Make": "Honda",
         "Model": "Prelude",
         "Number": 88,
-        "Position": 52,
         "Team Name": "Rookie Racing fka The Pirates of Plano",
         "Year": 1997
     },
@@ -632,7 +584,6 @@
         "Make": null,
         "Model": null,
         "Number": 1,
-        "Position": 53,
         "Team Name": "The Rotary Rotards",
         "Year": null
     },
@@ -645,7 +596,6 @@
         "Make": "Citroen (or Austin)",
         "Model": "D-Special id-19 / DS (or Mini / Moke)",
         "Number": 11,
-        "Position": 54,
         "Team Name": "Air Prance Oui We Can-can",
         "Year": 1971
     },
@@ -658,7 +608,6 @@
         "Make": "Honda",
         "Model": "Prelude",
         "Number": 77,
-        "Position": 55,
         "Team Name": "Philly River Rats",
         "Year": 1988
     },
@@ -671,7 +620,6 @@
         "Make": "toyota",
         "Model": "supra",
         "Number": 648,
-        "Position": 56,
         "Team Name": "Lawteam / TPS Outlaws",
         "Year": 1989
     },
@@ -684,7 +632,6 @@
         "Make": "Ford",
         "Model": "F-150",
         "Number": 888,
-        "Position": 57,
         "Team Name": "The Back Seat Boys",
         "Year": 1986
     },
@@ -697,7 +644,6 @@
         "Make": "Pontiac",
         "Model": "Fiero",
         "Number": 82,
-        "Position": 58,
         "Team Name": "DeCuzzi formerly telletubby",
         "Year": 1986
     },
@@ -710,7 +656,6 @@
         "Make": "Plymouth",
         "Model": "Fear the FURY",
         "Number": 62,
-        "Position": 59,
         "Team Name": "NSF Racing",
         "Year": 1962
     },
@@ -723,7 +668,6 @@
         "Make": "BMW",
         "Model": "318i",
         "Number": 311,
-        "Position": 6,
         "Team Name": "Red Green Racing",
         "Year": 1992
     },
@@ -736,7 +680,6 @@
         "Make": "Ford",
         "Model": "Mustang",
         "Number": 51,
-        "Position": 60,
         "Team Name": "Team ExperiMENTALS",
         "Year": 1990
     },
@@ -749,7 +692,6 @@
         "Make": "Mitsubishi",
         "Model": "3000GT",
         "Number": 199,
-        "Position": 61,
         "Team Name": "Misfits Crash and Carry",
         "Year": 1994
     },
@@ -762,7 +704,6 @@
         "Make": "SAAB",
         "Model": "9-3",
         "Number": 90,
-        "Position": 62,
         "Team Name": "rbankracing.com (Svenska II)",
         "Year": 1999
     },
@@ -775,7 +716,6 @@
         "Make": "Fiat",
         "Model": "128",
         "Number": 128,
-        "Position": 63,
         "Team Name": "Bite Your Tongue Racing - aka Team Quaker",
         "Year": 1974
     },
@@ -788,7 +728,6 @@
         "Make": "Ford",
         "Model": "Crown Victoria",
         "Number": 54,
-        "Position": 64,
         "Team Name": "Nuck'n Futz Racing",
         "Year": 2001
     },
@@ -801,7 +740,6 @@
         "Make": "Volvo",
         "Model": "740 Turbo",
         "Number": 76,
-        "Position": 65,
         "Team Name": "Your Mom's Box",
         "Year": 1988
     },
@@ -814,7 +752,6 @@
         "Make": "bmw",
         "Model": "stationwagon",
         "Number": 21,
-        "Position": 66,
         "Team Name": "Raft Riders",
         "Year": 1992
     },
@@ -827,7 +764,6 @@
         "Make": "Toyota",
         "Model": "Celica",
         "Number": 100,
-        "Position": 67,
         "Team Name": "Rusted Nuts Racing",
         "Year": 1994
     },
@@ -840,7 +776,6 @@
         "Make": "Nissan",
         "Model": "Altima",
         "Number": 58,
-        "Position": 68,
         "Team Name": "The Keys Disease",
         "Year": 1993
     },
@@ -853,7 +788,6 @@
         "Make": "BMW",
         "Model": "325e",
         "Number": 0,
-        "Position": 69,
         "Team Name": "Pridnestrovian National Racing Team",
         "Year": 1984
     },
@@ -866,7 +800,6 @@
         "Make": "Mitsubishi",
         "Model": "GT3000",
         "Number": 66,
-        "Position": 7,
         "Team Name": "Jacky Ickx GT30",
         "Year": 1991
     },
@@ -879,7 +812,6 @@
         "Make": "dodge",
         "Model": "neon",
         "Number": 15,
-        "Position": 70,
         "Team Name": "Team Casual",
         "Year": 1998
     },
@@ -892,7 +824,6 @@
         "Make": "NISSAN",
         "Model": "240 (POS) SX",
         "Number": 18,
-        "Position": 71,
         "Team Name": "Team HOFF",
         "Year": 1991
     },
@@ -905,7 +836,6 @@
         "Make": "VW",
         "Model": "Jetta",
         "Number": 337,
-        "Position": 72,
         "Team Name": "Miami Nice",
         "Year": 1989
     },
@@ -918,7 +848,6 @@
         "Make": "Mercedes",
         "Model": null,
         "Number": 997,
-        "Position": 73,
         "Team Name": "Oktoberfast",
         "Year": null
     },
@@ -931,7 +860,6 @@
         "Make": "Honda",
         "Model": "Civic",
         "Number": 64,
-        "Position": 74,
         "Team Name": "The Wedding Party",
         "Year": 1992
     },
@@ -944,7 +872,6 @@
         "Make": "Volvo",
         "Model": "240",
         "Number": 12,
-        "Position": 8,
         "Team Name": "FASTish and the FURRiest",
         "Year": 1991
     },
@@ -957,7 +884,6 @@
         "Make": "infiniti",
         "Model": "j30",
         "Number": 19,
-        "Position": 9,
         "Team Name": "Team Megalodon",
         "Year": 1995
     },

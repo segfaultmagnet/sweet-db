@@ -1,0 +1,15 @@
+<html>
+  <head>
+    {% if title %}
+    <title>Sweet DB - {{ title }}</title>
+    {% else %}
+    <title>SweetDB - LeMons Race Results</title>
+    {% endif %}
+  </head>
+  <body>
+    <span><a href="/index">Sweet DB</a></span>
+    <span>by <a href="https://github.com/segfaultmagnet">segfaultmagnet</a></span>
+    <hr>
+    {% block content %}{% endblock %}
+  </body>
+</html>

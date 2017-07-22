@@ -18,9 +18,11 @@ from jinja2 import Template
 @app.route('/')
 @app.route('/index')
 def index():
-    dbpath = os.path.normpath(os.path.dirname(os.path.abspath(__file__)) + "/../json")
+    db    = None
     testfile = '11.11.json'
-    db = None
+    title = "Sweet DB - LeMons Race Results"
+
+    dbpath = os.path.normpath(os.path.dirname(os.path.abspath(__file__)) + "/../json")
 
     try:
         with open(dbpath + '/' + testfile, 'r') as dat:
@@ -40,7 +42,7 @@ def index():
             entries[int(item[0])] = item[1]
 
     return render_template('index.html',
-                           title='sweet-db',
+                           title=title,
                            eventname=eventname,
                            eventdate=eventdate.strftime('%d %b %Y'),
                            entries=entries)

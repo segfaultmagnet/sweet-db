@@ -142,8 +142,7 @@ def _format_string(string):
 def _get_entry_string(row):
     """Returns a JSON string representation of the entry."""
     entry_string = '"' + str(row[0])                                        \
-                   + '": {"Position": '      + str(row[0])                  \
-                   + ', "Number": '          + _format_number(str(row[1]))  \
+                   + '": {"Number": '        + _format_number(str(row[1]))  \
                    + ', "Team Name": '       + _format_string(str(row[2]))  \
                    + ', "Class": '           + _format_string(str(row[3]))  \
                    + ', "Year": '            + _format_number(str(row[4]))  \
