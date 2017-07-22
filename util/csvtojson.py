@@ -88,8 +88,8 @@ def _convert(input_path, output_path):
 
             race_name = str(next(reader)[0])
             date  = next(reader) # This line contains day, month, and year.
-            day   = str(date[0])
-            month = str(date[1])
+            day   = str(date[1])
+            month = str(date[0])
             year  = str(date[2])
             meta_string = '"Name": "' + race_name      \
                         + '", "Date": {"Day": ' + day \
@@ -142,7 +142,8 @@ def _format_string(string):
 def _get_entry_string(row):
     """Returns a JSON string representation of the entry."""
     entry_string = '"' + str(row[0])                                        \
-                   + '": {"Number": '        + _format_number(str(row[1]))  \
+                   + '": {"Position": '      + str(row[0])                  \
+                   + ', "Number": '          + _format_number(str(row[1]))  \
                    + ', "Team Name": '       + _format_string(str(row[2]))  \
                    + ', "Class": '           + _format_string(str(row[3]))  \
                    + ', "Year": '            + _format_number(str(row[4]))  \

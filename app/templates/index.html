@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <h2>{{ eventname }}</h2>
+    <h4>{{ eventdate }}</h4>
+    <!--<p>First entry:<br>{{ entries[1] }}</p>-->
+    <table>
+    <TR>
+      <TD><b>Position</b></TD>
+      <TD><b>Number</b></TD>
+      <TD><b>Class</b></TD>
+      <TD><b>Team Name</b></TD>
+      <TD><b>Year</b></TD>
+      <TD><b>Make</b></TD>
+      <TD><b>Model</b></TD>
+      <TD><b>Laps</b></TD>
+      <TD><b>Best Time</b></TD>
+      <TD><b>BS Laps</b></TD>
+      <TD><b>Black Flag Laps</b></TD>
+    </TR>
+    {% for entry in entries %}
+    <TR>
+      <TD>{{ entries[entry]['Position'] }}</TD>
+      <TD>{{ entries[entry]['Number'] if entries[entry]['Number'] != None }}</TD>
+      <TD>{{ entries[entry]['Class'] if entries[entry]['Class'] != None }}</TD>
+      <TD>{{ entries[entry]['Team Name'] }}</TD>
+      <TD>{{ entries[entry]['Year'] if entries[entry]['Year'] != None }}</TD>
+      <TD>{{ entries[entry]['Make'] if entries[entry]['Make'] != None}}</TD>
+      <TD>{{ entries[entry]['Model'] if entries[entry]['Model'] != None}}</TD>
+      <TD>{{ entries[entry]['Laps'] if entries[entry]['Laps'] != None}}</TD>
+      <TD>{{ entries[entry]['Best Time'] if entries[entry]['Best Time'] != None}}</TD>
+      <TD>{{ -entries[entry]['BS Penalty Laps'] if entries[entry]['BS Penalty Laps'] != None}}</TD>
+      <TD>{{ -entries[entry]['Black Flag Laps'] if entries[entry]['Black Flag Laps'] != None}}</TD>
+    </TR>
+    {% endfor %}
+    </table>
+    </p>
+  </body>
+</html>
