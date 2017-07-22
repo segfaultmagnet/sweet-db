@@ -7,8 +7,6 @@ Webserver for displaying and searching through LeMons race results.
 ### To-Do
 Display single event; year -> event name.
 
-Split year/make/model into separate fields.
-
 Search and return from fields:
   - Car number
 
