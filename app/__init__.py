@@ -12,7 +12,7 @@ _debug = True
 
 app = Flask(__name__)
 app.config.from_object('config')
-app.config['root_dir'] = os.path.normpath(os.path.dirname(os.path.abspath(__file__)) + "/..")
+app.config['root_dir'] = os.path.normpath(os.path.dirname(os.path.abspath(__file__)) + '/..')
 if _debug:
     app.config['DEBUG'] = _debug
 

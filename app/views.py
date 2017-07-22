@@ -20,9 +20,9 @@ from jinja2 import Template
 def index():
     db    = None
     testfile = '11.11.json'
-    title = "Sweet DB - LeMons Race Results"
+    title = 'Sweet and Turrible - LeMons Race Results'
 
-    dbpath = os.path.normpath(os.path.dirname(os.path.abspath(__file__)) + "/../json")
+    dbpath = os.path.normpath(os.path.dirname(os.path.abspath(__file__)) + '/../json')
 
     try:
         with open(dbpath + '/' + testfile, 'r') as dat:
