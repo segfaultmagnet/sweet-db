@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!flask/bin/python
 
 # Name:         csvtojson.py
 # Authors:      Matthew Sheridan
@@ -46,7 +46,18 @@ import os
 import sys
 import csv
 import json
+
 from docopt import docopt
+
+# Handle weird pathing issues depending on where this is getting called from.
+modpath = os.path.basename(os.getcwd())
+print(modpath)
+if modpath == 'util':
+    import sweetutils
+elif __name__ == 'main':
+    import sweetutils
+else:
+    import util.sweetutils
 
 class _Error(Exception):
     """Base class for error handling."""
@@ -66,9 +77,13 @@ class _OutputFileError(_Error):
         self._msg = 'Failed to write out file: ' + repr(file)
 
 class _HooptieError(_Error):
-    """Our hooptie has crashed and burned!"""
+    """Crazy catcha-ll error."""
     def __init__(self, file, errorcode):
         self._msg = 'Error ' + repr(errorcode) + ': our hooptie has crashed and burned!'
+
+def _print_debug(msg):
+    if _debug:
+        sweetutils._print_debug(msg)
 
 def _convert(input_path, output_path):
     """
@@ -99,7 +114,6 @@ def _convert(input_path, output_path):
             # Skip header and handle each entry.
             entries_string = ''
             next(reader)
-            print(race_name)
             for row in reader:
                 # Generate a new JSON string for this entry.
                 new_entry_string = _get_entry_string(row)
@@ -161,11 +175,7 @@ def _csv_path(filename):
 def _json_path(filename):
     return os.path.normpath(_json_dir + '/' + filename + '.json')
 
-def _print_debug(err):
-    if _debug:
-      print(err)
-
-def _main(args):
+def main(debug=False):
     global _debug
     global _csv_dir
     global _json_dir
@@ -173,9 +183,6 @@ def _main(args):
 
     counter = 0
     _debug = False
-
-    if args['-d']:
-        _debug = True
 
     _root_dir = os.path.normpath(os.path.dirname(os.path.abspath(__file__)) + '/..')
     _csv_dir  = os.path.normpath(_root_dir + '/csv')
@@ -200,12 +207,18 @@ def _main(args):
                 raise _HooptieError(filename, result)
 
     if counter > 0:
-      print('\nProcessed ' + str(counter) + ' records.')
+      print(' * Processed ' + str(counter) + ' records.')
     else:
-      print('Did not process any records.')
+      print(' * Did not process any records.')
 
     return
 
+def __init__(args):
+    _debug = False
+    if args != None and args['-d']:
+        _debug = True
+    main(_debug)
+
 if __name__ == '__main__':
-    _main(docopt(__doc__, help=True, version=__version__))
+    __init__(docopt(__doc__, help=True, version=__version__))
     exit(0)

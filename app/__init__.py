@@ -7,6 +7,14 @@
 
 import os
 from flask import Flask
+import util.csvtojson
+import util.sweetutils
+
+def _print(msg):
+    util.sweetutils._print(msg)
+
+def _print_warn(msg):
+    util.sweetutils._print_warn(msg)
 
 _debug = True
 
@@ -17,10 +25,11 @@ if _debug:
     app.config['DEBUG'] = _debug
 
 if app.config['DEBUG']:
-    print("Running in: " + app.config['root_dir'])
+    _print("Running in: " + app.config['root_dir'])
 
 if app.config['SECRET_KEY'] == 'replace-before-deploying-bEEp-b0oP-#H**ptie_Code(123!)':
-    print('WARNING: Config value SECRET_KEY is the default value. Change before deploying!')
+    _print_warn('Config value \'SECRET_KEY\' is the default value. Change before deploying!')
 
+util.csvtojson.main(app.config['DEBUG'])
 
 from app import views
