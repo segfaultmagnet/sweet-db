@@ -17,7 +17,6 @@ Arguments:
             them to a JSON format.
 
             It is assumed that:
-              this is being executed in: "/py"
               input files are in:        "/csv"
               output files will be in:   "/json"
 
@@ -170,6 +169,7 @@ def _main(args):
     global _debug
     global _csv_dir
     global _json_dir
+    global _root_dir
 
     counter = 0
     _debug = False
@@ -177,8 +177,9 @@ def _main(args):
     if args["-d"]:
         _debug = True
 
-    _csv_dir  = os.path.normpath(os.getcwd() + "/../csv")
-    _json_dir = os.path.normpath(os.getcwd() + "/../json")
+    _root_dir = os.path.normpath(os.path.dirname(os.path.abspath(__file__)) + "/..")
+    _csv_dir  = os.path.normpath(_root_dir + "/csv")
+    _json_dir = os.path.normpath(_root_dir + "/json")
 
     # For each CSV, read and convert it to JSON.
     for file in os.listdir(_csv_dir):
