@@ -9,11 +9,11 @@ import os
 import sys
 import datetime
 import json
+from operator import attrgetter, itemgetter
 
 from flask import render_template
 from app import app
 from jinja2 import Template
-from operator import attrgetter, itemgetter
 
 @app.route('/')
 @app.route('/index')
