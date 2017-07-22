@@ -1,2 +1,4 @@
+flask/
 raw/
+tmp/
 .~lock*
