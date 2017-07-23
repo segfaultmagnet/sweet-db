@@ -27,11 +27,11 @@ def index():
 
     entries = []
     for r in result:
-        entries.append({'Position': r[2], 'Team Name': r[3], 'Number': r[4],
-                        'Class': r[5], 'Year': r[6], 'Make': r[7],
-                        'Model': r[8], 'Laps': r[9], 'Best Time': r[10], 
-                        'BS Penalty Laps': r[11], 'Black Flag Laps': r[12],
-                        'Event': r[13], 'Date': r[14]})
+        entries.append({'Position': r[1], 'Team Name': r[2], 'Number': r[3],
+                        'Class': r[4], 'Year': r[5], 'Make': r[6],
+                        'Model': r[7], 'Laps': r[8], 'Best Time': r[9], 
+                        'BS Penalty Laps': r[10], 'Black Flag Laps': r[11],
+                        'Event': r[12], 'Date': r[13]})
 
     db.close()
 

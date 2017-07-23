@@ -38,7 +38,7 @@ def add_records(obj, db):
 
     cursor = db.cursor()
     for e in entries.items():
-        cursor.execute("INSERT OR IGNORE INTO entry VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        cursor.execute("INSERT OR IGNORE INTO entry VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                       (e[1]['Hash'], e[1]['Position'], e[1]['Team Name'],
                        e[1]['Number'], e[1]['Class'], e[1]['Year'],
                        e[1]['Make'], e[1]['Model'], e[1]['Laps'],
@@ -50,8 +50,7 @@ def create_table(db):
     cursor = db.cursor()
     command = """
     CREATE TABLE IF NOT EXISTS entry (
-    record_number int PRIMARY KEY,
-    hash BLOB,
+    hash BLOB PRIMARY KEY,
     position int,
     team_name text,
     vic_no int,
