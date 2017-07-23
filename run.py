@@ -7,5 +7,9 @@
 # Copyright:    Matthew Sheridan 2017
 # Licence:      Beer-Ware License Rev. 42
 
+print(' * Flask messages.')
+print(' + sweet-db messages.')
+print('Starting sweet-db . . .')
+
 from app import app
 app.run(debug=True,port=5543)

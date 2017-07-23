@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+  {% block searchform %}{% endblock %}
   {% if eventname %}
     <b>{{ eventname }}</b>
     {% if eventdate %}
@@ -22,7 +23,7 @@
   </TR>
   {% for entry in entries %}
   <TR>
-    <TD align="right"  valign="top">{{ entry }}</TD>
+    <TD align="right"  valign="top">{{ entries[entry]['Position'] }}</TD>
     <TD align="left"   valign="top">{{ entries[entry]['Team Name'] }}</TD>
     <TD align="right"  valign="top">{{ entries[entry]['Number'] if entries[entry]['Number'] != None }}</TD>
     <TD align="center" valign="top">{{ entries[entry]['Class'] if entries[entry]['Class'] != None }}</TD>
@@ -31,8 +32,8 @@
     <TD align="left"   valign="top">{{ entries[entry]['Model'] if entries[entry]['Model'] != None}}</TD>
     <TD align="right"  valign="top">{{ entries[entry]['Laps'] if entries[entry]['Laps'] != None}}</TD>
     <TD align="left"   valign="top">{{ entries[entry]['Best Time'] if entries[entry]['Best Time'] != None}}</TD>
-    <TD align="right"  valign="top">{{ -entries[entry]['BS Penalty Laps'] if entries[entry]['BS Penalty Laps'] != None}}</TD>
-    <TD align="right"  valign="top">{{ -entries[entry]['Black Flag Laps'] if entries[entry]['Black Flag Laps'] != None}}</TD>
+    <TD align="right"  valign="top">{{ entries[entry]['BS Penalty Laps'] if entries[entry]['BS Penalty Laps'] != None}}</TD>
+    <TD align="right"  valign="top">{{ entries[entry]['Black Flag Laps'] if entries[entry]['Black Flag Laps'] != None}}</TD>
   </TR>
   {% endfor %}
   </table>

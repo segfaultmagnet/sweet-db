@@ -11,4 +11,5 @@ WTF_CSRF_ENABLED = True
 SECRET_KEY = 'replace-before-deploying-bEEp-b0oP-#H**ptie_Code(123!)'
 
 # sweet-db configuration values
-root_dir = None
+ROOT_DIR = None
+SQL_DB = '/sql/hoopties.db'

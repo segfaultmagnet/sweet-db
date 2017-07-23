@@ -44,20 +44,17 @@ __status__  = 'Development'
 
 import os
 import sys
+import base64
 import csv
+import hashlib
 import json
+import re
 
 from docopt import docopt
 
-# Handle weird pathing issues depending on where this is getting called from.
-modpath = os.path.basename(os.getcwd())
-print(modpath)
-if modpath == 'util':
-    import sweetutils
-elif __name__ == 'main':
-    import sweetutils
-else:
-    import util.sweetutils
+# Handle weird pathing issues.
+sys.path.append(os.path.normpath(os.path.dirname(__file__)))
+import sweetutils
 
 class _Error(Exception):
     """Base class for error handling."""
@@ -81,9 +78,15 @@ class _HooptieError(_Error):
     def __init__(self, file, errorcode):
         self._msg = 'Error ' + repr(errorcode) + ': our hooptie has crashed and burned!'
 
+def _print(msg):
+    sweetutils._print(__file__, msg)
+
 def _print_debug(msg):
     if _debug:
-        sweetutils._print_debug(msg)
+        sweetutils._print_debug(__file__, msg)
+
+def _print_warn(msg):
+    sweetutils._print_warn(__file__, msg)
 
 def _convert(input_path, output_path):
     """
@@ -101,12 +104,12 @@ def _convert(input_path, output_path):
         with open(input_path, "r") as in_file:
             reader = csv.reader(in_file, delimiter=',', quotechar='|')
 
-            race_name = str(next(reader)[0])
+            event = str(next(reader)[0])
             date  = next(reader) # This line contains day, month, and year.
             day   = str(date[1])
             month = str(date[0])
             year  = str(date[2])
-            meta_string = '"Name": "' + race_name      \
+            meta_string = '"Name": "' + event      \
                         + '", "Date": {"Day": ' + day \
                         + ', "Month": ' + month       \
                         + ', "Year": ' + year + '},'
@@ -116,7 +119,7 @@ def _convert(input_path, output_path):
             next(reader)
             for row in reader:
                 # Generate a new JSON string for this entry.
-                new_entry_string = _get_entry_string(row)
+                new_entry_string = _get_entry_string(row, event)
 
                 if len(entries_string) > 0:
                     entries_string += ', '
@@ -124,7 +127,6 @@ def _convert(input_path, output_path):
 
                 # Meta stuff for the user.
                 entry_count += 1
-                _print_debug(repr(input_path) + ': ' + str(entry_count))
 
             race_json = json.loads('{' + meta_string + entries_string + '}')
             with open(output_path, 'w') as out_file:
@@ -153,21 +155,31 @@ def _format_string(string):
     else:
         return '"' + _clean_string(string) + '"'
 
-def _get_entry_string(row):
+def _get_entry_string(row, event):
     """Returns a JSON string representation of the entry."""
-    entry_string = '"' + str(row[0])                                        \
-                   + '": {"Number": '        + _format_number(str(row[1]))  \
-                   + ', "Team Name": '       + _format_string(str(row[2]))  \
-                   + ', "Class": '           + _format_string(str(row[3]))  \
-                   + ', "Year": '            + _format_number(str(row[4]))  \
-                   + ', "Make": '            + _format_string(str(row[5]))  \
-                   + ', "Model": '           + _format_string(str(row[6]))  \
-                   + ', "Laps": '            + _format_number(str(row[7]))  \
-                   + ', "Best Time": '       + _format_string(str(row[8]))  \
-                   + ', "BS Penalty Laps": ' + _format_number(str(row[9]))  \
-                   + ', "Black Flag Laps": ' + _format_number(str(row[10])) \
+    entry_string = '"' + str(row[0])                                         \
+                   + '": {"Hash": '          + _get_md5(row[0],event,row[2]) \
+                   + ', "Number": '          + _format_number(str(row[1]))   \
+                   + ', "Team Name": '       + _format_string(str(row[2]))   \
+                   + ', "Class": '           + _format_string(str(row[3]))   \
+                   + ', "Year": '            + _format_number(str(row[4]))   \
+                   + ', "Make": '            + _format_string(str(row[5]))   \
+                   + ', "Model": '           + _format_string(str(row[6]))   \
+                   + ', "Laps": '            + _format_number(str(row[7]))   \
+                   + ', "Best Time": '       + _format_string(str(row[8]))   \
+                   + ', "BS Penalty Laps": ' + _format_number(str(row[9]))   \
+                   + ', "Black Flag Laps": ' + _format_number(str(row[10]))  \
                    + '}'
     return entry_string
+
+def _get_md5(pos, event, team):
+    m = hashlib.md5()
+    m.update(str(pos).encode())
+    m.update(str(event).encode())
+    m.update(str(team).encode())
+    hash_str = base64.urlsafe_b64encode(m.digest()).decode('utf-8')
+    hash_str = re.sub(r'[^a-zA-Z0-9]', '', hash_str)[:16]
+    return _format_string(hash_str)
 
 def _csv_path(filename):
     return os.path.normpath(_csv_dir + '/' + filename + '.csv')
@@ -182,7 +194,7 @@ def main(debug=False):
     global _root_dir
 
     counter = 0
-    _debug = False
+    _debug = debug
 
     _root_dir = os.path.normpath(os.path.dirname(os.path.abspath(__file__)) + '/..')
     _csv_dir  = os.path.normpath(_root_dir + '/csv')
@@ -192,8 +204,6 @@ def main(debug=False):
     for file in os.listdir(_csv_dir):
         if file.endswith('.csv'):
             filename = os.path.splitext(file)[0]
-
-            _print_debug('Processing: ' + filename)
             result = _convert(_csv_path(filename), _json_path(filename))
 
             # Handle any possible errors; otherwise, chalk up another success!
@@ -207,9 +217,9 @@ def main(debug=False):
                 raise _HooptieError(filename, result)
 
     if counter > 0:
-      print(' * Processed ' + str(counter) + ' records.')
+      _print('Processed ' + str(counter) + ' records.')
     else:
-      print(' * Did not process any records.')
+      _print('Did not process any records.')
 
     return
 

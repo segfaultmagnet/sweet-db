@@ -9,6 +9,7 @@ import os
 import sys
 import datetime
 import json
+import sqlite3
 from operator import attrgetter, itemgetter
 
 from flask import render_template
@@ -18,31 +19,29 @@ from jinja2 import Template
 @app.route('/')
 @app.route('/index')
 def index():
-    db    = None
-    testfile = '11.11.json'
-    title = 'Sweet and Turrible - LeMons Race Results'
+    db = sqlite3.connect(app.config['ROOT_DIR'] + app.config['SQL_DB'])
+    cursor = db.cursor()
 
-    dbpath = os.path.normpath(os.path.dirname(os.path.abspath(__file__)) + '/../json')
+    cursor.execute("SELECT * FROM entry")
+    result = cursor.fetchall()
 
-    try:
-        with open(dbpath + '/' + testfile, 'r') as dat:
-            db = json.load(dat)
-    except e:
-        return render_template('index.html',
-                               title='Database Exception')
-    eventname = db['Name']
-    eventdate = datetime.date(int(db['Date']['Year']),
-                              int(db['Date']['Month']),
-                              int(db['Date']['Day']))
-    
     entries = dict()
-    counter = 1
-    for item in db.items():
-        if str(item[0]) != 'Name' and str(item[0]) != 'Date':
-            entries[int(item[0])] = item[1]
+    for r in result:
+        entries[r[1]] = {'Position': r[2], 'Team Name': r[3], 'Number': r[4],
+                         'Class': r[5], 'Year': r[6], 'Make': r[7],
+                         'Model': r[8], 'Laps': r[9], 'Best Time': r[10], 
+                         'BS Penalty Laps': r[11], 'Black Flag Laps': r[12]}
+
+    db.close()
+
+    eventname = 'test'
+    eventdate = None
+
+    if eventname and eventdate:
+        eventname += ' (' + eventdate.strftime('%d %b %Y') + ')'
 
     return render_template('index.html',
-                           title=title,
+                           title=eventname,
                            eventname=eventname,
-                           eventdate=eventdate.strftime('%d %b %Y'),
+                           eventdate=eventdate, #.strftime('%d %b %Y'),
                            entries=entries)

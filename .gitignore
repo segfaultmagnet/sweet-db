@@ -1,4 +1,4 @@
 flask/
 raw/
-tmp/
+sql/
 .~lock*
