@@ -40,7 +40,7 @@ def index():
             sql_request += ' WHERE'
         else:
             sql_request += ' AND'
-        sql_request += ' WHERE make LIKE \'%' + search.make.data + '%\' COLLATE NOCASE'
+        sql_request += ' make LIKE \'%' + search.make.data + '%\' COLLATE NOCASE'
         empty = False
 
     if search.model.data:
@@ -48,7 +48,7 @@ def index():
             sql_request += ' WHERE'
         else:
             sql_request += ' AND'
-        sql_request += ' WHERE model LIKE \'%' + search.model.data + '%\' COLLATE NOCASE'
+        sql_request += ' model LIKE \'%' + search.model.data + '%\' COLLATE NOCASE'
         empty = False
 
     sql_request += ' ORDER BY event_date DESC, position ASC'
