@@ -1,4 +1,4 @@
-#!flask/bin/python
+#!flask/bin/python3
 
 # Name:         csvtojson.py
 # Authors:      Matthew Sheridan
