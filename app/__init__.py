@@ -47,7 +47,6 @@ util.csvtojson.main(app.config['DEBUG'])
 
 json_path = os.path.normpath(app.config['ROOT_DIR'] + '/json')
 for file in os.listdir(json_path):
-    _print("Loading " + str(os.path.basename(file)))
     with open(os.path.normpath(json_path + '/' + file), 'r') as dat:
         db  = sqlite3.connect(app.config['ROOT_DIR'] + app.config['SQL_DB'])
         obj = json.load(dat)
