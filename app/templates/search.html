@@ -1,0 +1,28 @@
+{% block content %}
+<TR>
+  <form method="post" name="searchform">
+    <TD align="left"   valign="top">
+      {{ search.event(size=25) }}
+    </TD>
+    <TD align="left"   valign="top"> </TD>
+    <TD align="right"  valign="top"> </TD>
+    <TD align="left"   valign="top">
+      {{ search.team(size=25) }}
+    </TD>
+    <TD align="right"  valign="top"> </TD>
+    <TD align="center" valign="top"> </TD>
+    <TD align="center" valign="top"> </TD>
+    <TD align="left"   valign="top">
+      {{ search.make(size=10) }}
+    </TD>
+    <TD align="left"   valign="top">
+      {{ search.model(size=20) }}
+    </TD>
+    <TD align="right"  valign="top"> </TD>
+    <TD align="left"   valign="top"> </TD>
+    <TD align="right"  valign="top"> </TD>
+    <TD align="right"  valign="top"> </TD>
+    <input type="submit" style="display: none"/>
+  </form>
+</TR>
+{% endblock %}

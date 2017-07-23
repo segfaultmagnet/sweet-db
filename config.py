@@ -7,7 +7,7 @@
 
 # Flask builtin configuration values
 DEBUG = False
-WTF_CSRF_ENABLED = True
+WTF_CSRF_ENABLED = False
 SECRET_KEY = 'replace-before-deploying-bEEp-b0oP-#H**ptie_Code(123!)'
 
 # sweet-db configuration values

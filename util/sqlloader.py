@@ -7,17 +7,6 @@
 
 import datetime
 
-import util.sweetutils
-
-def _print(msg):
-    util.sweetutils._print(__file__, msg)
-
-def _print_raw(msg):
-    util.sweetutils._print_raw(__file__, msg)
-
-def _print_warn(msg):
-    util.sweetutils._print_warn(__file__, msg)
-
 def add_records(obj, db):
     """
     @param obj = JSON object

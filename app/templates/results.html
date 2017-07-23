@@ -1,0 +1,19 @@
+{% block content %}
+  {% for entry in entries %}
+  <TR>
+    <TD align="left"   valign="top">{{ entry['Event'] }}</TD>
+    <TD align="left"   valign="top">{{ entry['Date'] }}</TD>
+    <TD align="right"  valign="top">{{ entry['Position'] }}</TD>
+    <TD align="left"   valign="top">{{ entry['Team Name'] }}</TD>
+    <TD align="right"  valign="top">{{ entry['Number'] if entry['Number'] != None }}</TD>
+    <TD align="center" valign="top">{{ entry['Class'] if entry['Class'] != None }}</TD>
+    <TD align="center" valign="top">{{ entry['Year'] if entry['Year'] != None }}</TD>
+    <TD align="left"   valign="top">{{ entry['Make'] if entry['Make'] != None}}</TD>
+    <TD align="left"   valign="top">{{ entry['Model'] if entry['Model'] != None}}</TD>
+    <TD align="right"  valign="top">{{ entry['Laps'] if entry['Laps'] != None}}</TD>
+    <TD align="left"   valign="top">{{ entry['Best Time'] if entry['Best Time'] != None}}</TD>
+    <TD align="right"  valign="top">{{ entry['BS Penalty Laps'] if entry['BS Penalty Laps'] != None}}</TD>
+    <TD align="right"  valign="top">{{ entry['Black Flag Laps'] if entry['Black Flag Laps'] != None}}</TD>
+  </TR>
+  {% endfor %}
+{% endblock %}

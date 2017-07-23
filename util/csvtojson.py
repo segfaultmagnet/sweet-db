@@ -8,30 +8,27 @@
 # Licence:      Beer-Ware License Rev. 42
 
 """Usage:
-  csvtojson.py [-d]
   csvtojson.py -h | --help
   csvtojson.py -v | --version
 
-Arguments:
-  input     Reads CSV files which contain LeMons race results and converts
-            them to a JSON format.
+  Reads CSV files which contain LeMons race results and converts
+  them to a JSON format.
 
-            It is assumed that:
-              input files are in:        '/csv'
-              output files will be in:   '/json'
+  It is assumed that:
+    input files are in:        '/csv'
+    output files will be in:   '/json'
 
-            All CSV files within the input directory will be processed and
-            their filenames used for the resulting output JSON files. Output
-            files will be overwritten if they already exist.
+  All CSV files within the input directory will be processed and
+  their filenames used for the resulting output JSON files. Output
+  files will be overwritten if they already exist.
 
-            Example:
-              '/csv/hooptiefest2017.csv'
-            Will be processed into:
-              '/json/hooptiefest2017.json'
+  Example:
+    '/csv/hooptiefest2017.csv'
+  Will be processed into:
+    '/json/hooptiefest2017.json'
 
 
 Options:
-  -d             Enable debugging output.
   -h --help      Show this help message.
   -v, --version  Display program version number.
 """
@@ -80,13 +77,6 @@ class _HooptieError(_Error):
 
 def _print(msg):
     sweetutils._print(__file__, msg)
-
-def _print_debug(msg):
-    if _debug:
-        sweetutils._print_debug(__file__, msg)
-
-def _print_warn(msg):
-    sweetutils._print_warn(__file__, msg)
 
 def _convert(input_path, output_path):
     """
@@ -187,14 +177,12 @@ def _csv_path(filename):
 def _json_path(filename):
     return os.path.normpath(_json_dir + '/' + filename + '.json')
 
-def main(debug=False):
-    global _debug
+def main():
     global _csv_dir
     global _json_dir
     global _root_dir
 
     counter = 0
-    _debug = debug
 
     _root_dir = os.path.normpath(os.path.dirname(os.path.abspath(__file__)) + '/..')
     _csv_dir  = os.path.normpath(_root_dir + '/csv')
@@ -224,10 +212,7 @@ def main(debug=False):
     return
 
 def __init__(args):
-    _debug = False
-    if args != None and args['-d']:
-        _debug = True
-    main(_debug)
+    main()
 
 if __name__ == '__main__':
     __init__(docopt(__doc__, help=True, version=__version__))
