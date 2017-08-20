@@ -5,12 +5,6 @@
 Webserver for displaying and searching through LeMons race results.
 
 ### To-Do
-##### Server App:
-Build page to display and search entries:
-
-- Have empty textbox for each field and option to sort by that field (à la Digikey).
-
-Set up SQL DB.
 
 Years:
 
